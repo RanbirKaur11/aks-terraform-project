@@ -15,6 +15,14 @@ This project provisions an AKS cluster with supporting infrastructure using Terr
 
 ---
 
+Principles:
+
+* Never hardcode values: use variables and `envs/*/terraform.tfvars`.
+* Support multiple regions & subscriptions: pass `subscription_id` and `location` per environment.
+* Secrets in Azure Key Vault.
+* ACR access granted to AKS via role assignment.
+* Dev access limited to whitelisted IPs; Stage/Prod access via CI/CD.
+
 ## Project Structure
 
 ```
@@ -43,6 +51,8 @@ aks-terraform-project/
 ```
 
 ---
+
+
 
 ## Automatic Environment Variable Workflow
 
